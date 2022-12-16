@@ -20,6 +20,11 @@ public partial class MainPage : ContentPage
 
 		SemanticScreenReader.Announce(CounterBtn.Text);
 	}
+
+    async void NavListBtn_Clicked(System.Object sender, System.EventArgs e)
+    {
+        await Shell.Current.GoToAsync("//ItemsList");
+    }
 }
 
 

@@ -1,12 +1,18 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+<ContentPage
+            xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:akademiettest2="clr-namespace:AkademietTest2"
              x:Class="AkademietTest2.ItemsList"
-             Title="ListView-eksempel">
+             Title="ListView-eksempel"
+             xmlns:maps="clr-namespace:Microsoft.Maui.Controls.Maps;assembly=Microsoft.Maui.Controls.Maps"
+             >
 
         
-
+        <VerticalStackLayout
+            Spacing="25">
+            <Button x:Name="RefreshDataBtn" Clicked="RefreshDataBtn_Clicked" Text="Hent data" />
+            <Button x:Name="BackBtn" Clicked="BackBtn_Clicked" Text="Tilbake" />
         <ListView x:Name="ItemsView" HasUnevenRows="True">
             <ListView.ItemTemplate>
                 <DataTemplate>
@@ -37,6 +43,6 @@
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
-
+        </VerticalStackLayout>
 
 </ContentPage>

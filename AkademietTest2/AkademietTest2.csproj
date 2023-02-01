@@ -35,6 +35,9 @@
 	  <CodesignKey>iPhone Developer</CodesignKey>
 	  <CodesignProvision>Automatic</CodesignProvision>
 	</PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net7.0-ios|AnyCPU'">
+	  <CreatePackage>false</CreatePackage>
+	</PropertyGroup>
 	<ItemGroup>
 		<!-- App Icon -->
 		<MauiIcon Include="Resources\AppIcon\appicon.svg" ForegroundFile="Resources\AppIcon\appiconfg.svg" Color="#512BD4" />
@@ -52,12 +55,16 @@
 
 	<ItemGroup>
 		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="7.0.0" />
+		<PackageReference Include="Google.Apis" Version="1.58.0" />
+		<PackageReference Include="Microsoft.Maui.Controls.Maps" Version="7.0.52" />
 	</ItemGroup>
 
 	<ItemGroup>
 	  <None Remove="Resources\Images\Gerald_G_Victorian_House_1.svg" />
 	  <None Remove="Resources\.DS_Store" />
 	  <None Remove="Resources\Images\house.svg" />
+	  <None Remove="Google.Apis" />
+	  <None Remove="Microsoft.Maui.Controls.Maps" />
 	</ItemGroup>
 	<ItemGroup>
 	  <BundleResource Include="Resources\Images\house.svg" />
@@ -67,6 +74,9 @@
 	</ItemGroup>
 	<ItemGroup>
 	  <MauiXaml Update="ItemsList.xaml">
+	    <SubType></SubType>
+	  </MauiXaml>
+	  <MauiXaml Update="Hjelp.xaml">
 	    <SubType></SubType>
 	  </MauiXaml>
 	</ItemGroup>

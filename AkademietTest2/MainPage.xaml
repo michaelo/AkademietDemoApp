@@ -1,11 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="AkademietTest2.MainPage">
+             x:Class="AkademietTest2.MainPage"
+             xmlns:maps="clr-namespace:Microsoft.Maui.Controls.Maps;assembly=Microsoft.Maui.Controls.Maps"
+             >
 
     <ScrollView>
         <VerticalStackLayout
-            Spacing="25"
+            Spacing="15"
             Padding="30,0"
             VerticalOptions="Center">
 
@@ -31,17 +33,29 @@
 
             <Button
                 x:Name="CounterBtn"
-                Text="Click me"
+                Text="Click me 👍 "
                 SemanticProperties.Hint="Counts the number of times you click"
                 Clicked="OnCounterClicked"
-                HorizontalOptions="Center" />
+                HorizontalOptions="Center"
+                />
 
-            <Button
+            <maps:Map IsShowingUser="True" x:Name="map" HeightRequest="500" WidthRequest="500" Loaded="map_Loaded" />
+
+            <!--<Button
                 x:Name="NavListBtn"
                 Text="Liste-siden"
                 SemanticProperties.Hint="Navigate to list-page"
                 Clicked="NavListBtn_Clicked"
                 HorizontalOptions="Center" />
+
+            <Button
+                Text="Vibrer"
+                Clicked="Button_Clicked" />
+
+            <Button
+                x:Name="HapticTestBtn"
+                Text="Haptic"
+                Clicked="HapticTestBtn_Clicked" />-->
 
         </VerticalStackLayout>
     </ScrollView>
